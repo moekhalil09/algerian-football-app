@@ -3,6 +3,7 @@ package com.springboot.algerian_football_app.model;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -39,6 +40,7 @@ public class Player {
         }
     }
 
+    @DBRef
     public Club playerClub;
 
 }

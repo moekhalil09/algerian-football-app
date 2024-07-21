@@ -2,6 +2,7 @@ package com.springboot.algerian_football_app.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ public class Manager {
 
     private LocalDate managerBd;
 
-    private Club managedClub;
+    private String managedClub;
 
     private String Nationality;
 

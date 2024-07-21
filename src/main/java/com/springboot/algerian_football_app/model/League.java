@@ -1,7 +1,9 @@
 package com.springboot.algerian_football_app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
@@ -19,7 +21,9 @@ public class League {
 
     private String name;
 
-    private List<Club> clubs = new ArrayList<>();
+
+    @JsonIgnore
+    private List<Club> clubs ;
 
 
 }
