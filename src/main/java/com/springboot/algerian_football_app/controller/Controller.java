@@ -4,7 +4,7 @@ import com.springboot.algerian_football_app.dto.ClubDto;
 import com.springboot.algerian_football_app.dto.LeagueDto;
 import com.springboot.algerian_football_app.dto.ManagerDto;
 import com.springboot.algerian_football_app.dto.PlayerDto;
-import com.springboot.algerian_football_app.model.Manager;
+import com.springboot.algerian_football_app.model.Club;
 import com.springboot.algerian_football_app.model.Player;
 import com.springboot.algerian_football_app.service.ClubService;
 import com.springboot.algerian_football_app.service.LeagueService;
@@ -15,7 +15,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -81,6 +80,12 @@ public class Controller {
     public String addPlayer(@ModelAttribute("players") Player player) {
         playerService.addPlayer(player);
         return "redirect:/players";
+    }
+    @GetMapping("/club/{id}")
+    public List<Player> getPlayerByClubId(@PathVariable String id) {
+        Club club = new Club();
+        club.setClubId(id);
+        return playerService.getPlayerByClubId(club);
     }
 
 }

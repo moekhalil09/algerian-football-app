@@ -3,6 +3,24 @@
 <head>
     <title>Club Details</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .player-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .player-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .player-card .player-info {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-5">
@@ -23,9 +41,22 @@
             <ul>
                 <li th:each="tournament : ${club.tournaments}" th:text="${tournament}"></li>
             </ul>
+            <!-- New section to display players -->
+            <h3>Players</h3>
+            <div class="row">
+                <div th:each="player : ${players}" class="col-md-4">
+                    <div class="player-card card p-3">
+                        <img th:src="${player.playerUrlImage}" alt="Player Image">
+                        <div class="player-info">
+                            <h5 th:text="${player.name}"></h5>
+                            <p th:text="${player.position}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <a href="/api/football/clubs" class="btn btn-secondary mt-4">Back to Clubs</a>
+    <a href="/clubs" class="btn btn-secondary mt-4">Back to Clubs</a>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

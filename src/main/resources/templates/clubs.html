@@ -24,20 +24,18 @@
                 <th>Clubs</th>
                 <th>Total Players</th>
                 <th>Stadium</th>
-                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="club : ${clubs}">
                 <td>
-                    <img th:src="${club.clubUrl}" alt="Club Logo" class="club-logo">
-                    <span th:text="${club.clubName}">Club Name</span>
+                    <a th:href="@{/clubs/{clubName}(clubName=${club.clubName})}"style="text-decoration: none;color: inherit">
+                        <img th:src="${club.clubUrl}" alt="Club Logo" class="club-logo">
+                        <span th:text="${club.clubName}">Club Name</span>
+                    </a>
                 </td>
                 <td th:text="${club.totalPlayers}"></td>
                 <td th:text="${club.stadium}"></td>
-                <td>
-                    <a th:href="@{/clubs/{clubName}(clubName=${club.clubName})}" class="btn btn-primary btn-sm">View Details</a>
-                </td>
             </tr>
             </tbody>
         </table>

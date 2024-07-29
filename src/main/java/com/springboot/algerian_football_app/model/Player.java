@@ -28,7 +28,7 @@ public class Player {
 
     private PlayerPosition position;
 
-    private int shirtNumber;
+    private Integer shirtNumber;
 
     private LocalDate birthDate;
 
@@ -43,4 +43,5 @@ public class Player {
     @DBRef
     public Club playerClub;
 
+    private String playerUrlImage;
 }

@@ -29,4 +29,7 @@ public class PlayerDto {
     private LocalDate birthDate;
 
     private ClubDto playerClub;
+
+    private String playerUrlImage;
+
 }
