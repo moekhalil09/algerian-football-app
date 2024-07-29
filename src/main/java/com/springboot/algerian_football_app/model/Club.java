@@ -26,9 +26,19 @@ public class Club {
     private String clubLeague;
 
     @DBRef
-    private Manager managedBy;
+    private String managedBy;
 
 
     @DBRef
     private List<Player> players;
+
+    private Integer totalPlayers;
+
+    private List<String> tournaments;
+
+    private String stadium;
+
+    private String city;
+
+    private String clubUrl;
 }

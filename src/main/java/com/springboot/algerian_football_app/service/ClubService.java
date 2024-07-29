@@ -25,7 +25,7 @@ public class ClubService {
         return clubRepository.findByClubName(clubName);
     }
 
-    public Manager getManager(String clubName) {
+    public String getManager(String clubName) {
         Club club = clubRepository.findByClubName(clubName)
                 .orElseThrow(() -> new RuntimeException("Club not found"));
         return club.getManagedBy();

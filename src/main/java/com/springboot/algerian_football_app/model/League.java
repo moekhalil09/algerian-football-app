@@ -21,7 +21,6 @@ public class League {
 
     private String name;
 
-
     @JsonIgnore
     private List<Club> clubs ;
 

@@ -28,7 +28,18 @@ public class ClubDto {
 
     private LeagueDto clubLeague;
 
-    private ManagerDto managedBy;
+    private String managedBy;
 
+    private List<Player> players;
+
+    private Integer totalPlayers ;
+
+    private List<String> tournaments ;
+
+    private String stadium;
+
+    private String city;
+
+    private String clubUrl;
 
 }

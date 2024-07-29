@@ -9,7 +9,7 @@ public class ManagerDto {
 
     private LocalDate managerBd;
 
-    private ClubDto managedClub;
+    private String managedClub;
 
     private String Nationality;
 
