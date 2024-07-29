@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "669c22b7401e8c63facf3bd6"
+  },
+  "name": "Saudi League",
+  "clubs": [
+    {
+      "_id": {
+        "$oid": "669c22b7401e8c63facf3bd5"
+      },
+      "clubName": "Al Ahly",
+      "managedBy": {
+        "$ref": "manager",
+        "$id": {
+          "$oid": "669c22b7401e8c63facf3bd4"
+        }
+      }
+    }
+  ],
+  "_class": "com.springboot.algerian_football_app.model.League"
+},
+{
+  "_id": {
+    "$oid": "669cdb207d88837946136b4b"
+  },
+  "name": "Premiere League"
+}]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manager Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center">Manager Details</h1>
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2 th:text="${manager.name}"></h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Email:</strong> <span th:text="${manager.email}"></span></p>
+            <p><strong>Phone:</strong> <span th:text="${manager.phone}"></span></p>
+            <p><strong>Experience:</strong> <span th:text="${manager.experience}"></span></p>
+        </div>
+    </div>
+    <a href="/clubs" class="btn btn-secondary mt-4">Back to Clubs</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

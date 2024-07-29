@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Club Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center">Club Details</h1>
+    <div class="card mt-4">
+        <div>
+            <img th:src="${club.clubUrl}" alt="Club Logo" style="max-width: 200px; max-height: 200px;"/>
+        </div>
+        <div class="card-header">
+            <h2 th:text="${club.clubName}"></h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Managed By:</strong> <span th:text="${club.managedBy?: 'Unknown'}"></span></p>
+            <p><strong>Total Players:</strong> <span th:text="${club.totalPlayers}"></span></p>
+            <p><strong>Stadium:</strong> <span th:text="${club.stadium}"></span></p>
+            <p><strong>City:</strong> <span th:text="${club.city}"></span></p>
+            <p><strong>Tournaments:</strong></p>
+            <ul>
+                <li th:each="tournament : ${club.tournaments}" th:text="${tournament}"></li>
+            </ul>
+        </div>
+    </div>
+    <a href="/api/football/clubs" class="btn btn-secondary mt-4">Back to Clubs</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
